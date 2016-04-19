@@ -1,0 +1,2 @@
+# User rules for admin
+myname ALL=(ALL) NOPASSWD:ALL

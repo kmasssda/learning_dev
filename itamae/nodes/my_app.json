@@ -1,0 +1,6 @@
+{
+  "application": {
+   "db_host": "sample_app"
+  },
+  "my_name": "my_name"
+}
