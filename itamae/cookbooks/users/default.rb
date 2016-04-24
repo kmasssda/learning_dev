@@ -20,3 +20,15 @@ remote_file %(/home/#{node[:my_name]}/.ssh/authorized_keys) do
   owner node[:my_name]
   source %(files/home/user/.ssh/authorized_keys)
 end
+
+file "/etc/ssh/sshd_config" do
+  action :edit
+  block do |content|
+    content.gsub!(/^#PasswordAuthentication .+$/, "PasswordAuthentication no")
+    content.gsub!("PermitRootLogin without-password", "PermitRootLogin no")
+  end
+end
+
+service "ssh" do
+  action :restart
+end
