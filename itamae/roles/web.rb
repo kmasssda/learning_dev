@@ -1,3 +1,4 @@
+package 'vim'
 package 'build-essential'
 package 'libssl-dev'
 package 'libreadline-dev'
